@@ -1,0 +1,42 @@
+<%- include("parts/top.ejs")%>
+    <div class="container" style="padding-top:100px; padding-bottom:100px;">
+        <form method="post" action="/update" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="example1" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="example1" value="<%=book.title%>">
+            </div>
+            <div class="mb-3">
+                <label for="example2" class="form-label">Description</label>
+                <textarea type="text" class="form-control" name="description" id="example2" ><%=book.discreption%></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="hidden" name="id" value="<%=book._id%>">
+            </div>
+            <div class="mb-3">
+                <label for="example3" class="form-label">Author</label>
+                <input type="text" class="form-control" name="author" id="example3" value="<%=book.author%>">
+            </div>
+            <div class="mb-3">
+                <label for="example4" class="form-label">Price</label>
+                <input type="number" class="form-control" name="price" id="example4" value="<%=book.price%>">
+            </div>
+            <div class="mb-3">
+                <img src="/uploads/<%=book.image%>" alt="" width="200px" height="200px">
+            </div>
+            <div><input type="hidden" name="oldImage" value="<%=book.image%>"></div>
+            <div class="mb-3">
+                <label for="example5" class="form-label">Image</label>
+                <input type="file" class="form-control" name="image" id="example5">
+            </div>
+            <br>
+            <%if (message){%>
+                <div class="alert alert-success" role="alert">
+                    <%= message %>
+                </div>
+                <%}%>
+                <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+    <%- include("parts/bottom.ejs")%>

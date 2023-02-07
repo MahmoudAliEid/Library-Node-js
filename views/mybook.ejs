@@ -1,0 +1,31 @@
+<%- include("parts/top.ejs")%>
+<div class="container" style='padding-top:200px'>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Book</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(let book of books){%>
+            <tr>
+                <th ><img src="/uploads/<%=book.image%>" alt="" width="50px"></th>
+                <td><%=book.title%></td>
+                <td><%=book.author%></td>
+                <td><%=book.price%></td>
+                <td><a href="/delete/<%= book._id%>" class="btn btn-danger">Delete</a> <a href="/update/<%= book._id%>" class="btn btn-primary">Update</a></td>
+            </tr>
+            <%}%>
+        </tbody>
+    </table>
+    <%if (message){%>
+        <div class="alert alert-success" role="alert">
+            <%= message %>
+        </div>
+        <%}%>
+</div>
+<%- include("parts/bottom.ejs")%>

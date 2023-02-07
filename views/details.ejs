@@ -1,0 +1,32 @@
+<%- include("parts/top.ejs")%>
+<div class="container text-center"style="padding-top:200px;">
+    <div class="row">
+        <div class="col">
+            <img src="/uploads/<%=book.image%>" alt="image" style="width:400px; height:300px">
+        </div>
+        <div class="col">
+            <div class="down-content">
+                <a href="#">
+                    <h4>
+                        <%=book.title %>
+                    </h4>
+                </a>
+                <h6>
+                    $<%=book.price%>
+                </h6>
+                <p>
+                    <%=book.discreption %>
+                </p>
+                <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("parts/bottom.ejs")%>

@@ -1,0 +1,38 @@
+<%- include("parts/top.ejs")%>
+<div class="container" style="padding-top:100px; padding-bottom:100px;" >
+    <form method="post" action="/addbook" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="example1" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="example1" >
+        </div>
+        <div class="mb-3">
+            <label for="example2" class="form-label">Description</label>
+            <textarea type="text" class="form-control" name="description"id="example2" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="example3" class="form-label">Author</label>
+            <input type="text" class="form-control" name="author"id="example3" >
+        </div>
+        <div class="mb-3">
+            <label for="example4" class="form-label">Price</label>
+            <input type="number" class="form-control" name="price" id="example4" >
+        </div>
+        <div class="mb-3">
+            <label for="example5" class="form-label">Image</label>
+            <input type="file"  class="form-control" name="image" id="example5" >
+        </div>
+        <%if (Smessage){%>
+            <div class="alert alert-success" role="alert">
+                <%= Smessage %>
+            </div>
+        <%}%> 
+        
+        <%if (Emessage){%>
+            <div class="alert alert-danger" role="alert">
+                <%= Emessage %>
+            </div>
+        <%}%>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include("parts/bottom.ejs")%>
